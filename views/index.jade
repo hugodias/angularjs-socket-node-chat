@@ -5,7 +5,7 @@ block body
     .row-fluid
       .span10
         h3 Messages
-        .well
+        .well.message-spot
           p(ng-repeat='message in messages',
             ng-class='message.me',
             class='') {{message.user}}: {{message.text}}
