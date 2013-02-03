@@ -9,10 +9,13 @@ var express = require('express')
 
 
 // Heroku config
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
+if(process.env.PORT) {
+  io.configure(function () { 
+    io.set("transports", ["xhr-polling"]); 
+    io.set("polling duration", 10); 
+  });  
+}
+
 
 // Configuration
 var config = require('./config')(app, express);
@@ -33,5 +36,3 @@ io.sockets.on('connection', socket);
 var port = process.env.PORT || 5000;
 
 server.listen(port);
-
-
