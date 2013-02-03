@@ -1,0 +1,26 @@
+/* app css stylesheet */
+
+.overflowable {
+  height: 700px;
+  overflow-y: auto;
+  background-image: -webkit-linear-gradient(top, rgb(37, 42, 48), rgb(37, 42, 48));
+  color: #33b5e5;
+}
+
+.bar-submit-message{
+  border-top: 1px solid #33b5e5;
+}
+
+.form-send-message {
+  margin-top: 20px
+}
+
+.overflowable p {
+  margin: 0;
+}
+
+
+p.active{
+  background: #FFF;
+  color: #000;
+}

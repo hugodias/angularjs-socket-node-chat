@@ -1,0 +1,36 @@
+extends layout
+
+block body
+  .container(ng-controller='AppCtrl')
+    .row-fluid
+      .span10
+        h3 Messages
+        .well
+          p(ng-repeat='message in messages',
+            ng-class='message.me',
+            class='') {{message.user}}: {{message.text}}
+
+        .navbar.navbar-inverse.navbar-fixed-bottom.bar-submit-message
+          .navbar-inner
+            .container
+              form(ng-submit='sendMessage()',class='well form-search form-send-message')
+                input(ng-model='message',class='span11 input-message', placeholder='Message')
+                input(type='submit', value='Send', class='btn btn-success', style='margin-left: 10px;margin-top: 0')
+                    
+      .span2
+        h3 Users
+        .well
+          ul.nav.nav-list
+            li(ng-repeat='user in users') 
+              a(ng-click="mention(user)") {{user}}
+
+    #changeNameModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-body
+          h3 Change your name
+          p Your current user name is {{name}}
+          form(ng-submit='changeName()')
+            input(ng-model='newName')
+            input(type='submit', value='Change Name', class='btn btn-success',style='margin-left: 10px;')
+            a(data-dismiss='modal',class='btn btn-danger',style='margin-left: 10px') Nevermind
+
+
