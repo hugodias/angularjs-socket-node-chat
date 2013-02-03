@@ -1,5 +1,5 @@
 {
-    "name": "angular-socket-io-im"
+    "name": "angularjs-socketio-nodejs-chat"
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
