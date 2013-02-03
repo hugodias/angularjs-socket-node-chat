@@ -24,7 +24,8 @@ app.get('*', routes.index);
 io.sockets.on('connection', socket);
 
 // Start server
+var port = process.env.PORT || 5000;
 
-server.listen(3000);
+server.listen(port);
 
 
