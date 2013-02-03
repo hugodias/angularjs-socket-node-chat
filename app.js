@@ -8,7 +8,7 @@ var express = require('express')
 
 
 
-// Heroku config
+// Heroku config only
 if(process.env.PORT) {
   io.configure(function () { 
     io.set("transports", ["xhr-polling"]); 
