@@ -7,6 +7,10 @@ var express = require('express')
   , io = require('socket.io').listen(server);
 
 
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
 
 // Configuration
 var config = require('./config')(app, express);
