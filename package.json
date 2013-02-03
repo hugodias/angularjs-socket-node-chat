@@ -2,8 +2,12 @@
     "name": "angularjs-socketio-nodejs-chat"
   , "version": "0.0.1"
   , "private": true
+  , "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
   , "dependencies": {
-      "express": "2.5.10"
+      "express": "latest"
     , "jade": ">= 0.26.1"
     , "socket.io": ">= 0.9.6"
   }
