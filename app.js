@@ -1,11 +1,12 @@
-var express = require('express'),
-  routes = require('./routes'),
-  socket = require('./routes/socket.js');
+var express = require('express')
+  , app = express()
+  , http = require('http')
+  , server = http.createServer(app)
+  , routes = require('./routes')
+  , socket = require('./routes/socket.js')
+  , io = require('socket.io').listen(server);
 
-var app = module.exports = express.createServer();
 
-// Hook Socket.io into Express
-var io = require('socket.io').listen(app);
 
 // Configuration
 var config = require('./config')(app, express);
@@ -24,6 +25,4 @@ io.sockets.on('connection', socket);
 
 // Start server
 
-app.listen(3000, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
-});
+server.listen(3000);
